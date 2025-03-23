@@ -1,7 +1,7 @@
 name: Branch Name Validation
 
 on:
-  pull_request:
+  push:
     branches:
       - '*'
 
@@ -9,9 +9,6 @@ jobs:
   validate-branch-name:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Set script permissions
         run: chmod +x ./.github/scripts/validate-branch-name.sh
 
