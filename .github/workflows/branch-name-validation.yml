@@ -24,6 +24,9 @@ jobs:
           else
             BRANCH_NAME=${GITHUB_REF#refs/heads/}
           fi
+          echo "branch name '$BRANCH_NAME'."
 
       - name: Validate Branch Name
-        run: ./.github/scripts/validate-branch-name.sh ${{ steps.get_branch.outputs.branch }}
+        run: |
+          echo "branch name '$BRANCH_NAME', from steps: ${{ steps.get_branch.outputs.branch }}."
+          ./.github/scripts/validate-branch-name.sh ${{ steps.get_branch.outputs.branch }}
