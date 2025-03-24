@@ -1991,6 +1991,7 @@ h2.error-page__title {
 
 .product-page__photo-mini {
   width: 10%;
+  height: 10%;
   border: 1.5px #CDCDCD solid;
   border-radius: 10px;
   padding: 10px;
