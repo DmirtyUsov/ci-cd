@@ -22,7 +22,7 @@ jobs:
           if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
             echo "BRANCH_NAME=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
           else
-             echo "BRANCH_NAME=${GITHUB_REF#refs/heads/} >> $GITHUB_OUTPUT
+             echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
           fi
           echo "branch name '$BRANCH_NAME'."
 
