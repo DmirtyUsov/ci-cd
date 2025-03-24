@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" href="./assets/svg/empty-cart-icon.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;500&display=swap"
-    rel="stylesheet">
   <title>Online-store</title>
 </head>
+
 <body class="body">
   <div class="body__wrapper">
     <header class="header">
@@ -34,7 +32,8 @@
       </div>
     </header>
     <main class="main">
-      <div class="main__container container" id="page-container">
+      <h2 class="loading">Be patient. Loading...</h2>
+      <div class="main__container container hidden" id="page-container">
       </div>
     </main>
     <section id="promo" class="promo">
@@ -53,9 +52,11 @@
         <div class="footer__column">
           <p class="footer__title">Contacts</p>
           <ul class="footer__list">
-            <li class="footer__item"><a href="https://yumentsel.github.io/rsschool-cv/" target="_blank">Yuliya Mentsel</a>
+            <li class="footer__item"><a href="https://yumentsel.github.io/rsschool-cv/" target="_blank">Yuliya
+                Mentsel</a>
             </li>
-            <li class="footer__item"><a href="https://lexarudak.github.io/rsschool-cv/" target="_blank">Aliaksei Rudak</a>
+            <li class="footer__item"><a href="https://lexarudak.github.io/rsschool-cv/" target="_blank">Aliaksei
+                Rudak</a>
             </li>
           </ul>
         </div>
@@ -71,11 +72,14 @@
         <div class="footer__column">
           <p class="footer__title">RS School</p>
           <ul class="footer__list">
-            <li class="footer__item"><a href="https://rs.school/js/" target="_blank"><img class="rs-school__img" alt="RS School logo" src="./assets/svg/rs_school.svg" width="80"></a>
+            <li class="footer__item"><a href="https://rs.school/js/" target="_blank"><img class="rs-school__img"
+                  alt="RS School logo" src="./assets/svg/rs_school.svg" width="80"></a>
             </li>
             <li class="footer__item"><span>2022</span>
             </li>
-            <li class="footer__item design-info"><a href="https://www.behance.net/gallery/157498329/Online-store-of-indoor-plants/modules/888571069" target="_blank">Designed by Romana Chaban</a>
+            <li class="footer__item design-info"><a
+                href="https://www.behance.net/gallery/157498329/Online-store-of-indoor-plants/modules/888571069"
+                target="_blank">Designed by Romana Chaban</a>
             </li>
           </ul>
         </div>
@@ -89,10 +93,10 @@
   <!-- catalog page -->
   <template id="catalog">
     <section id="catalog" class="catalog page">
-    
+
       <div class="filter">
         <div class="filter__type">
-          <h3 class="filter__title">Category</h3>
+          <h2 class="filter__title">Category</h2>
           <ul id='check-type' class="filter__list">
             <li class="check">
               <label class="check__label">Succulent
@@ -145,9 +149,9 @@
             </li>
           </ul>
         </div>
-    
+
         <div class="filter__height type">
-          <h3 class="filter__title">Height</h3>
+          <h2 class="filter__title">Height</h2>
           <ul class="filter__list">
             <li class="check">
               <label class="check__label">Short
@@ -172,29 +176,29 @@
             </li>
           </ul>
         </div>
-    
+
         <div class="filter__price">
-          <h3 class="filter__title">Price</h3>
+          <h2 class="filter__title">Price</h2>
           <div class="range">
             <div class="range__value">
               <span>min</span>
-              <input type="number" class="input-min" value="1" max="100">
+              <input type="number" class="input-min" value="1" max="100" aria-label="Price range minimum">
               <span>$</span>
               <div class="range__separator">-</div>
               <span>max</span>
-              <input type="number" class="input-max" value="100" max="100">
+              <input type="number" class="input-max" value="100" max="100" aria-label="Price range maximum">
               <span>$</span>
             </div>
             <div class="range__slider slider">
               <div class="slider__progress"></div>
             </div>
             <div class="range__range-input">
-              <input type="range" class="range-min" min="1" max="106" value="1" step="1">
-              <input type="range" class="range-max" min="1" max="100" value="100" step="1">
+              <input type="range" class="range-min" min="1" max="106" value="1" step="1" aria-label="Price range slider min value">
+              <input type="range" class="range-max" min="1" max="100" value="100" step="1" aria-label="Price range slider max value">
             </div>
           </div>
         </div>
-    
+
         <div class="filter__sale check">
           <label class="check__label">Sale
             <input type="checkbox" class="check__input" value="true">
@@ -202,33 +206,33 @@
           </label>
           <div class="check__found"><span id="true" class="check__found-num">18</span><span> / 18</span></div>
         </div>
-    
+
         <div class="filter__stock">
-          <h3 class="filter__title">Stock</h3>
+          <h2 class="filter__title">Stock</h2>
           <div class="range">
             <div class="range__value">
               <span>min</span>
-              <input type="number" class="input-min" value="1" max="65">
+              <input type="number" class="input-min" value="1" max="65" aria-label="In stock minimum">
               <div class="range__separator">-</div>
               <span>max</span>
-              <input type="number" class="input-max" value="65" max="65">
+              <input type="number" class="input-max" value="65" max="65" aria-label="In stock maximum">
             </div>
             <div class="range__slider slider">
               <div class="slider__progress"></div>
             </div>
             <div class="range__range-input">
-              <input type="range" class="range-min" min="1" max="69" value="1" step="1">
-              <input type="range" class="range-max" min="1" max="65" value="65" step="1">
+              <input type="range" class="range-min" min="1" max="69" value="1" step="1" aria-label="In stock range min value">
+              <input type="range" class="range-max" min="1" max="65" value="65" step="1" aria-label="In stock range max value">
             </div>
           </div>
         </div>
-    
+
         <div class="filter__button-wrapper">
           <button class="button button_filter">Reset</button>
           <button class="button button_filter button-light button_copy">Copy link</button>
         </div>
       </div>
-    
+
       <div class="products">
         <div class="products__parameters">
           <div class="products__sort-parameters">
@@ -242,16 +246,18 @@
                 <div data-sort=price-down class="sort__down sort-control"></div>
               </div>
             </div>
-            <div class="found-products">Found: <div><span class="found-products__num">24</span><span class="found-products__num"> / 24</span></div></div>
+            <div class="found-products">Found: <div><span class="found-products__num">24</span><span
+                  class="found-products__num"> / 24</span></div>
+            </div>
             <input type="text" placeholder="Search" class="sort-input">
           </div>
-    
+
           <div class="products__layout layout">
             <div class="layout__portrait active"></div>
             <div class="layout__landscape"></div>
           </div>
         </div>
-    
+
         <div class="products__container">Not Found</div>
       </div>
       <div class="catalog__filter-button filter-button">
@@ -262,27 +268,31 @@
       </div>
     </section>
   </template>
-      <!-- product card -->
-      <template id="productCardTemp">
-        <div id="product" class="product">
-          <div class="product__photo">
-            <div class="product__icons">
-              <div class="product__discount"><div class="product__discount-num">20</div><span>%</span></div>
-              <div class="product__rating"><div class="product__rating-num">4.5</div><span>&#9734;</span></div>
-            </div>
+  <!-- product card -->
+  <template id="productCardTemp">
+    <div id="product" class="product">
+      <div class="product__photo">
+        <div class="product__icons">
+          <div class="product__discount">
+            <div class="product__discount-num">20</div><span>%</span>
           </div>
-          <div class="product__info">
-            <div class="product__type"></div>
-            <h2 class="product__title"></h2>
-            <p class="product__description"></p>
-            <div class="product__purchase">
-              <div class="product__price usd-symbol"></div>
-              <button class="product__button button"></button>
-            </div>
-            <div class="product__stock">In stock: <span class="product__stock-num">28</span></div>
+          <div class="product__rating">
+            <div class="product__rating-num">4.5</div><span>&#9734;</span>
           </div>
         </div>
-      </template>
+      </div>
+      <div class="product__info">
+        <div class="product__type"></div>
+        <h2 class="product__title"></h2>
+        <p class="product__description"></p>
+        <div class="product__purchase">
+          <div class="product__price usd-symbol"></div>
+          <button class="product__button button"></button>
+        </div>
+        <div class="product__stock">In stock: <span class="product__stock-num">28</span></div>
+      </div>
+    </div>
+  </template>
   <!-- product page -->
   <template id="product-page">
     <section class="product-page page">
@@ -341,103 +351,103 @@
       </div>
     </section>
   </template>
-      <!-- empty cart page -->
-      <template id="empty-cart">
-        <section class="empty-cart-page page">
-          <img class="empty-cart-page__img" src="./assets/svg/empty-cart-icon.svg" alt="empty cart icon">
-          <div class="empty-cart-page__block">
-            <p class="empty-cart-page__text">Your cart is empty.</p>
-            <a class="empty-cart__btn button" href="/catalog">Go to catalog</a>
+  <!-- empty cart page -->
+  <template id="empty-cart">
+    <section class="empty-cart-page page">
+      <img class="empty-cart-page__img" src="./assets/svg/empty-cart-icon.svg" alt="empty cart icon">
+      <div class="empty-cart-page__block">
+        <p class="empty-cart-page__text">Your cart is empty.</p>
+        <a class="empty-cart__btn button" href="/catalog">Go to catalog</a>
+      </div>
+    </section>
+  </template>
+  <!-- full cart page -->
+  <template id="full-cart">
+    <div class="full-cart-page page">
+      <div class="full-cart-page__products">
+        <div class="full-cart-page__settings">
+          <div class="full-cart-page__pagination">
+            <div class="full-cart-page__pagination-pages">
+              <span class="full-cart-page__pagination-text">Page</span>
+              <button class="button-arrow" id="paginationPageDown">&lt;</button>
+              <input class="amount-number" id="paginationCurrentPage" type="number" min="1" max="10" value="1" disabled>
+              <button class="button-arrow" id="paginationPageUp">&gt;</button>
+              <span class="full-cart-page__pagination-text">of</span>
+              <input class="amount-number" id="pagination-max-pages" type="number" min="1" max="10" value="2" disabled>
+            </div>
+            <div class="full-cart-page__pagination-items">
+              <span class="full-cart-page__pagination-text">Items on page:</span>
+              <button class="button-arrow" id="pagination-items-minus">&lt;</button>
+              <input class="amount-number" id="pagination-items" type="text" disabled>
+              <button class="button-arrow" id="pagination-items-plus">&gt;</button>
+            </div>
           </div>
-        </section>
-      </template>
-      <!-- full cart page -->
-      <template id="full-cart">
-        <div class="full-cart-page page">
-          <div class="full-cart-page__products">
-            <div class="full-cart-page__settings">
-              <div class="full-cart-page__pagination">
-                <div class="full-cart-page__pagination-pages">
-                  <span class="full-cart-page__pagination-text">Page</span>
-                  <button class="button-arrow" id="paginationPageDown">&lt;</button>
-                  <input class="amount-number" id="paginationCurrentPage" type="number" min="1" max="10" value="1" disabled>
-                  <button class="button-arrow" id="paginationPageUp">&gt;</button>
-                  <span class="full-cart-page__pagination-text">of</span>
-                  <input class="amount-number" id="pagination-max-pages" type="number" min="1" max="10" value="2" disabled>
-                </div>
-                <div class="full-cart-page__pagination-items">
-                  <span class="full-cart-page__pagination-text">Items on page:</span>
-                  <button class="button-arrow" id="pagination-items-minus">&lt;</button>
-                  <input class="amount-number" id="pagination-items" type="text" disabled>
-                  <button class="button-arrow" id="pagination-items-plus">&gt;</button>
-                </div>
-              </div>
-              <a class="clean-card-btn" href="/cart">Clean cart</a>
-            </div>
-            <ul class="cart-list">
-              
-            </ul>
-          </div>
-          <div class="full-cart-page__panel" id="bill">
-            <div class="full-cart-page__promo">
-              <input class="full-cart-page__promo-input" type="text" placeholder="PROMO CODE">
-            </div>
-            <div class="full-cart-page__info">
-              <p class="full-cart-page__subtitle subtitle">
-                Your order
-              </p>
-              <p class="full-cart-page__items">
-                <span>Items in cart:</span>
-                <span class="full-cart-page__items-value" id="bill-item"></span>
-              </p>
-              <p class="full-cart-page__subtotal">
-                <span>Subtotal</span>
-                <span class="usd-symbol" id="bill-old-sum"></span>
-              </p>
-              <ul class="discounts" id="bill-promo-container">
-              </ul>
-              <p class="full-cart-page__total">
-                <span>Total</span>
-                <span id="bill-total"></span>
-              </p>
-            </div>
-            <span class="full-cart-page__buy-button button">
-              Proceed to checkout
-            </span>
-            <a class="full-cart-page__catalog-button button-light" href="/catalog">
-              Continue shopping
-            </a>
+          <a class="clean-card-btn" href="/cart">Clean cart</a>
+        </div>
+        <ul class="cart-list">
 
+        </ul>
+      </div>
+      <div class="full-cart-page__panel" id="bill">
+        <div class="full-cart-page__promo">
+          <input class="full-cart-page__promo-input" type="text" placeholder="PROMO CODE">
+        </div>
+        <div class="full-cart-page__info">
+          <p class="full-cart-page__subtitle subtitle">
+            Your order
+          </p>
+          <p class="full-cart-page__items">
+            <span>Items in cart:</span>
+            <span class="full-cart-page__items-value" id="bill-item"></span>
+          </p>
+          <p class="full-cart-page__subtotal">
+            <span>Subtotal</span>
+            <span class="usd-symbol" id="bill-old-sum"></span>
+          </p>
+          <ul class="discounts" id="bill-promo-container">
+          </ul>
+          <p class="full-cart-page__total">
+            <span>Total</span>
+            <span id="bill-total"></span>
+          </p>
+        </div>
+        <span class="full-cart-page__buy-button button">
+          Proceed to checkout
+        </span>
+        <a class="full-cart-page__catalog-button button-light" href="/catalog">
+          Continue shopping
+        </a>
+
+      </div>
+    </div>
+  </template>
+  <!-- product cart card -->
+  <template id="product-cart-card">
+    <li class="cart-list__item product">
+      <span class="cart-list__number"></span>
+      <div class="product__photo">
+        <div class="product__icons">
+          <div class="product__rating"></div>
+        </div>
+      </div>
+      <div class="product__info">
+        <div class="product__type"></div>
+        <h2 class="product__title"></h2>
+        <p class="product__description"></p>
+        <div class="product__stock">In stock: <span class="product__stock-value"></span>
+        </div>
+        <div class="product__purchase">
+          <span class="product__price"></span>
+          <span class="product__old-price"></span>
+          <div class="product__amount">
+            <button class="button-arrow product__left-arrow">&lt;</button>
+            <input class="product__amount-number amount-number" type="number" min="0" value="1" disabled>
+            <button class="button-arrow product__right-arrow">&gt;</button>
           </div>
         </div>
-      </template>
-          <!-- product cart card -->
-          <template id="product-cart-card">
-            <li class="cart-list__item product">
-              <span class="cart-list__number"></span>
-              <div class="product__photo">
-                <div class="product__icons">
-                  <div class="product__rating"></div>
-                </div>
-              </div>
-              <div class="product__info">
-                <div class="product__type"></div>
-                <h2 class="product__title"></h2>
-                <p class="product__description"></p>
-                <div class="product__stock">In stock: <span   class="product__stock-value"></span>
-                </div>
-                <div class="product__purchase">
-                  <span class="product__price"></span>
-                  <span class="product__old-price"></span>
-                  <div class="product__amount">
-                    <button class="button-arrow product__left-arrow">&lt;</button>
-                    <input class="product__amount-number amount-number" type="number" min="0" value="1" disabled>
-                    <button class="button-arrow product__right-arrow">&gt;</button>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </template>
+      </div>
+    </li>
+  </template>
   <!-- 404 page -->
   <template id="error">
     <section class="error-page page">
@@ -462,8 +472,7 @@
         <input class="purchase-form__input" id="purchasePhone" type="tel" placeholder="+375 29 851 82 13">
         <span class="purchase-form__error" id="purchasePhoneError">invalid phone entered</span>
         <span class="purchase-form__text">Delivery address</span>
-        <input class="purchase-form__input" id="purchaseAddress" type="text"
-          placeholder="Belarus, Minsk, Odintsova">
+        <input class="purchase-form__input" id="purchaseAddress" type="text" placeholder="Belarus, Minsk, Odintsova">
         <span class="purchase-form__error" id="purchaseAddressError">invalid address entered</span>
         <span class="purchase-form__text">Email</span>
         <input class="purchase-form__input" id="purchaseEmail" type="email" placeholder="ivanova@gmail.com">
@@ -495,4 +504,5 @@
   </template>
 
 </body>
+
 </html>

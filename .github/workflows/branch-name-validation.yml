@@ -1,0 +1,30 @@
+name: Branch Name Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feature/ci-cd'
+
+jobs:
+  validate-branch-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Set script permissions
+        run: chmod +x ./.github/scripts/validate-branch-name.sh
+
+      - name: Get branch name
+        id: get_branch
+        run: |
+          if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
+            echo "BRANCH_NAME=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
+          else
+             echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Validate Branch Name
+        run: |
+          ./.github/scripts/validate-branch-name.sh ${{ steps.get_branch.outputs.BRANCH_NAME }}

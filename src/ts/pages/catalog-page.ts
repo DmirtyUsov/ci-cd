@@ -91,6 +91,8 @@ class CatalogPage extends Page {
       this.container.append(page);
       this.drawProductCard(plantsData);
       this.setSettingsButton();
+      document.querySelector('.loading')?.classList.add('hidden');
+      this.container.classList.remove('hidden');
     }
   }
 
