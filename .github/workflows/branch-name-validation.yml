@@ -1,9 +1,10 @@
 name: Branch Name Validation
 
 on:
-  push:
+  pull_request:
     branches:
-      - '*'
+      - main
+      - 'feature/ci-cd'
 
 jobs:
   validate-branch-name:
@@ -19,10 +20,11 @@ jobs:
         id: get_branch
         run: |
           if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
-            BRANCH_NAME=${GITHUB_HEAD_REF}
+            echo "BRANCH_NAME=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
           else
-            BRANCH_NAME=${GITHUB_REF#refs/heads/}
+             echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
           fi
 
       - name: Validate Branch Name
-        run: ./.github/scripts/validate-branch-name.sh ${{ steps.get_branch.outputs.branch }}
+        run: |
+          ./.github/scripts/validate-branch-name.sh ${{ steps.get_branch.outputs.BRANCH_NAME }}
