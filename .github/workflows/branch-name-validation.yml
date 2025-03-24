@@ -20,13 +20,13 @@ jobs:
         id: get_branch
         run: |
           if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then
-            BRANCH_NAME=${GITHUB_HEAD_REF}
+            echo "BRANCH_NAME=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
           else
-            BRANCH_NAME=${GITHUB_REF#refs/heads/}
+             echo "BRANCH_NAME=${GITHUB_REF#refs/heads/} >> $GITHUB_OUTPUT
           fi
           echo "branch name '$BRANCH_NAME'."
 
       - name: Validate Branch Name
         run: |
-          echo "branch name '$BRANCH_NAME', from steps: ${{ steps.get_branch.outputs.branch }}."
-          ./.github/scripts/validate-branch-name.sh ${{ steps.get_branch.outputs.branch }}
+          echo "branch name '$BRANCH_NAME', from steps: ${{ steps.get_branch.outputs.BRANCH_NAME }}."
+          ./.github/scripts/validate-branch-name.sh ${{ steps.get_branch.outputs.BRANCH_NAME }}
